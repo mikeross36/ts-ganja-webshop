@@ -1,0 +1,109 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss";
+
+.categories {
+  &__wrapper {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    justify-items: center;
+    gap: 3rem;
+
+    @include mixins.breakpoint-up(medium) {
+      gap: 2rem;
+    }
+
+    .category__card {
+      width: 17rem;
+      height: auto;
+      border-radius: $radius;
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: space-between;
+      padding: 1rem 1.5rem 2rem 1.5rem;
+      // color: $textColor;
+      box-shadow: $boxSh;
+
+      .card__image {
+        padding: 2px;
+
+        .category__card-img {
+          object-fit: fill;
+          border-top-right-radius: $radius;
+          border-top-left-radius: $radius;
+        }
+      }
+
+      .category__card-body {
+        height: 100%;
+        padding: 1rem 0;
+        align-self: start;
+
+        & p {
+          font-size: $fontSm;
+          padding: 0.2rem 0;
+        }
+      }
+
+      .card__footer {
+        align-self: end;
+        float: right;
+      }
+    }
+  }
+}
+
+.category__products {
+  &-container {
+    padding-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    justify-items: center;
+    gap: 3rem;
+
+    .product__card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 17rem;
+      height: 20rem;
+      margin-top: auto;
+      padding: 1rem 1rem 2rem 1rem;
+      transition: all 0.1s ease;
+      box-shadow: $boxSh;
+      border-radius: $radius;
+
+      .product__card-image {
+        margin-top: auto;
+        height: 100%;
+
+        .product__img {
+          display: block;
+          width: 120px;
+          filter: drop-shadow(5px 10px 5px rgba(0, 0, 0, 0.5));
+          transition: transform 0.3s ease-in-out;
+        }
+      }
+
+      & p {
+        font-size: $fontSm;
+        font-weight: $weightLg;
+        padding-bottom: 0.5rem;
+      }
+
+      .in-cart {
+        display: inline-block;
+        padding-left: 0.5rem;
+        color: $mainGreen;
+      }
+
+      &-buttons {
+        display: flex;
+        gap: 1rem;
+        margin: 0.5rem 0;
+      }
+    }
+  }
+}

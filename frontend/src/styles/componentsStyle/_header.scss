@@ -1,0 +1,130 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss";
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: $mainGreen;
+
+  .nav {
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mixins.breakpoint-up(medium) {
+      // justify-content: initial;
+      column-gap: 1.5rem;
+    }
+
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      & h3 {
+        color: $whiteColor;
+        font-weight: normal;
+      }
+      & img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .nav__menu {
+      @include mixins.breakpoint-down(medium) {
+        position: fixed;
+        background-color: $mainGreen;
+        top: 4rem;
+        right: -100%;
+        width: 100%;
+        height: 100%;
+        padding: 6rem 0rem;
+        transition: right 0.2s ease-in-out;
+      }
+
+      &.show-menu {
+        right: 0;
+        transition: right 0.2s ease-in-out;
+      }
+
+      .nav__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 3rem;
+
+        @include mixins.breakpoint-up(medium) {
+          width: 100%;
+          flex-direction: row;
+          margin-left: $mb-2;
+          column-gap: 1.5rem;
+        }
+
+        @include mixins.breakpoint-up(large) {
+          margin-left: 7rem;
+        }
+      }
+
+      .nav__link {
+        color: $whiteColor;
+        font-weight: $weightMd;
+        text-transform: capitalize;
+        font-size: $fontSlg;
+        transition: all 0.3s ease-in-out;
+
+        &.active {
+          color: $starColor;
+        }
+
+        @include mixins.breakpoint-up(medium) {
+          font-size: $fontMd;
+          margin-left: $mb-1;
+
+          &:hover {
+            text-decoration: underline;
+            text-underline-offset: 5px;
+          }
+        }
+      }
+
+      .cart__items-total {
+        background-color: $mainRed;
+        color: $whiteColor;
+        font-weight: $weightMd;
+        padding: 0 6px;
+        border-radius: 50%;
+        margin-left: 5px;
+      }
+
+      .nav__close {
+        position: absolute;
+        top: 3%;
+        right: 6%;
+        cursor: pointer;
+
+        @include mixins.breakpoint-up(medium) {
+          display: none;
+        }
+      }
+    }
+
+    .nav__toggle {
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+
+      @include mixins.breakpoint-up(medium) {
+        display: none;
+      }
+
+      &-btn {
+        color: $whiteColor;
+      }
+    }
+  }
+}

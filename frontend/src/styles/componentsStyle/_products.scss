@@ -1,0 +1,105 @@
+@use "../variables" as *;
+@use "../mixins.scss";
+
+.products {
+  &__container {
+    padding-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    justify-items: center;
+    gap: 3rem;
+
+    .product__card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 17rem;
+      height: 20rem;
+      margin-top: auto;
+      padding: 1rem 1rem 2rem 1rem;
+      transition: all 0.1s ease;
+      box-shadow: $boxSh;
+      border-radius: $radius;
+
+      .product__card-image {
+        margin-top: auto;
+        height: 100%;
+
+        .product__img {
+          display: block;
+          width: 120px;
+          filter: drop-shadow(5px 10px 5px rgba(0, 0, 0, 0.5));
+          transition: transform 0.3s ease-in-out;
+        }
+      }
+
+      & p {
+        font-size: $fontSm;
+        font-weight: $weightLg;
+        padding-bottom: 0.5rem;
+      }
+
+      .in-cart {
+        display: inline-block;
+        padding-left: 0.5rem;
+        color: $mainGreen;
+      }
+
+      &-buttons {
+        display: flex;
+        gap: 1rem;
+        margin: 0.5rem 0;
+      }
+    }
+  }
+
+  .products__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    transition: all 1s ease;
+    margin-top: $mb-2;
+
+    .page__nav-btn {
+      padding: 0.5rem 1rem;
+      background-color: $cardColor;
+      color: $textColor;
+      border-radius: $radius;
+      box-shadow: $boxSh;
+    }
+
+    .page__num-btn {
+      padding: 0.5rem;
+      border-radius: 5px;
+      box-shadow: $boxSh;
+
+      &.page__num-active {
+        background-color: $mainGreen;
+        color: $whiteColor;
+      }
+      &.page__num-disabled {
+        display: none;
+      }
+    }
+  }
+}
+
+// .product__price {
+//   display: flex;
+//   gap: 0.4rem;
+
+//   & select {
+//     height: 1.8rem;
+//     margin: 0.5rem 0;
+//     outline: none;
+//     border: none;
+//     color: $whiteColor;
+//     font-weight: $weightLg;
+//     box-shadow: $boxSh;
+//     border-radius: 5px;
+//     background-color: $starColor;
+//   }
+// }
