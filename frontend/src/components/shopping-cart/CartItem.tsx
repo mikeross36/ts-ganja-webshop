@@ -35,7 +35,6 @@ const CartItem = ({ item }: { item: CartItemType }): JSX.Element => {
               ) as unknown as ShoppingCartActionType
             )
           }
-          // disabled={item.quantity === 1}
         >
           <FaMinusCircle size={20} />
         </button>

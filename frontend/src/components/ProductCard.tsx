@@ -17,13 +17,16 @@ const ProductCard = ({ ganja }: { ganja: GanjaType }): JSX.Element => {
   const { name, coverImage, rating, category, thc, _id, price } = ganja;
   const [ganjaRating, setGanjaRating] = useState<number | undefined>(rating);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, _setQuantity] = useState(1);
 
   const { cartItems } = useAppSelector(
     (state: RootState) => state.shoppingCart
   );
 
-  const inCart: boolean = cartItems.some((item) => item._id === ganja._id);
+  const inCart: boolean = (cartItems as Array<{ _id: string }>).some(
+    (item: { _id: string }) => item._id === ganja._id
+  );
+
   const itemInCart = inCart ? " Item in cart ✔" : null;
 
   const { setIsCartOpen } = useAppContext();

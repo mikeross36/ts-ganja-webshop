@@ -3,16 +3,6 @@ import multer from "multer";
 import asyncHandler from "express-async-handler";
 import sharp from "sharp";
 
-// const multerStorage = multer.diskStorage({
-//   destination: (req, res, callback) => {
-//     callback(null, "public/images/users");
-//   },
-//   filename: (req, file, callback) => {
-//     const ext = file.mimetype.split("/")[1];
-//     callback(null, `user-${req.user._id}-${Date.now()}.${ext}`);
-//   },
-// });
-
 const multerStorage = multer.memoryStorage();
 
 const multerFilter = (

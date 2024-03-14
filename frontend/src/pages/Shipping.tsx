@@ -14,7 +14,6 @@ const Shipping = () => {
   const { shippingAddress } = useAppSelector(
     (state) => state.shoppingCart as ShoppingCartStateType
   );
-  // console.log(shippingAddress);
   const [fullName, setFullName] = useState(shippingAddress?.fullName || "");
   const [address, setAddress] = useState(shippingAddress?.address || "");
   const [city, setCity] = useState(shippingAddress?.city || "");

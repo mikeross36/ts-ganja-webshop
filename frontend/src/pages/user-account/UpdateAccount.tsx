@@ -7,14 +7,12 @@ import { updateUserAccountAction } from "../../state/action-creators/userActions
 import { UserActionType } from "../../state/actions/user";
 import Button from "../../components/Button";
 import { AuthActionType } from "../../state/actions/auth";
-// import { useAppContext } from "../../contexts/AppContextProvider";
 import { useNavigate } from "react-router-dom";
 
 const UpdateAccount = () => {
   const {
     userInfo: { user },
   } = useAppSelector((state: RootState) => state.loginUser as UserInfoType);
-  // console.log(user);
 
   const [currentUserName, setCurrentUserName] = useState(user ? user.name : "");
   const [currentUserEmail, setCurrentUserEmail] = useState(
@@ -23,7 +21,6 @@ const UpdateAccount = () => {
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  // const { setShowModalLogin } = useAppContext();
 
   const handleUpdateAccount = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -65,28 +62,6 @@ const UpdateAccount = () => {
             onChange={(e) => setCurrentUserEmail(e.target.value)}
           />
         </div>
-
-        {/* <div className="form__control form__photo-upload">
-          <img
-            src={
-              `${apiUrl}/images/users/default.jpg` ||
-              `${apiUrl}/images/users/${user.photo}`
-            }
-            alt="uploaded user pic"
-            className="form__user-photo"
-          />
-
-          <input
-            type="file"
-            id="photo"
-            className="form__upload"
-            accept={`${apiUrl}/images/*`}
-            onChange={selectPhoto}
-          />
-
-          <label htmlFor="photo">upload image</label>
-        </div> */}
-
         <span>
           <Button type="submit" className="button button--XSmall">
             update

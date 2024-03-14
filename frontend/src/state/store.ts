@@ -9,7 +9,6 @@ import * as authReducers from "./reducers/authReducers";
 import * as categoryReducers from "./reducers/categoryReducers";
 import { shoppingCartReducer } from "./reducers/shoppingCartReducers";
 import * as reviewReducers from "./reducers/reviewReducers";
-// import * as orderReducers from "./reducers/orderReducers";
 import { updateUserAccountReducer } from "./reducers/userReducers";
 
 const rootReducer = combineReducers({
@@ -24,11 +23,6 @@ const rootReducer = combineReducers({
   getCategory: categoryReducers.getCategoryReducer,
   shoppingCart: shoppingCartReducer,
   addReview: reviewReducers.addReviewReducer,
-  // createOrder: orderReducers.createOrderReducer,
-  // getOrder: orderReducers.getOrderReducer,
-  // getPaypalClient: orderReducers.getOrderReducer,
-  // payOrder: orderReducers.payOrderReducer,
-  // getUserOrders: orderReducers.getUserOrdersReducer,
   updateUserAccount: updateUserAccountReducer,
 });
 

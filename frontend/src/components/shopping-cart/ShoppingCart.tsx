@@ -25,7 +25,6 @@ const ShoppingCart = (): JSX.Element => {
   const { userInfo } = useAppSelector(
     (state: RootState) => state.loginUser as UserInfoType
   );
-  // console.log(userInfo);
 
   const dispatch = useShoppingCartDispatch();
 

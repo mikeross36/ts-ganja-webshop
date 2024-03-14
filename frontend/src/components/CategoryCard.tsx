@@ -19,7 +19,7 @@ const CategoryCard = ({ category }: { category: CategoryType }) => {
     effectsOfUse,
     periodOfUse,
   } = category;
-  // console.log(category);
+
   const dispatch = useAppDispatch();
 
   const getCategoryDetails = () => {

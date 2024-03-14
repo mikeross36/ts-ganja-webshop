@@ -31,7 +31,6 @@ const apiUrl = import.meta.env.VITE_API_URL;
 const Order = () => {
   const params = useParams();
   const { id: orderId } = params;
-  // console.log(orderId);
 
   const { userInfo } = useAppSelector(
     (state: RootState) => state.loginUser

@@ -13,7 +13,6 @@ export const getAllGanjasAction =
           type: GanjaActionTypes.GET_ALL_GANJAS_SUCCESS,
           payload: data,
         });
-      // console.log(data);
     } catch (err) {
       if (err instanceof Error) {
         dispatch({

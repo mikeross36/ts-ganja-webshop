@@ -13,7 +13,7 @@ const NavMenu = (): JSX.Element => {
   const { userInfo } = useAppSelector(
     (state: RootState) => state.loginUser as UserInfoType
   );
-  // console.log(userInfo);
+
   const { itemsTotal } = useAppSelector(
     (state: RootState) => state.shoppingCart
   );

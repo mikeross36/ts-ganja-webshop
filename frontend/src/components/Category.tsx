@@ -5,7 +5,6 @@ import { useAppSelector } from "../hooks/useAppSelector";
 
 const Category = () => {
   const { category } = useAppSelector((state: RootState) => state.getCategory);
-  // console.log(category);
 
   return (
     <section className="category__products section container">

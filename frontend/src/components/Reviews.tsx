@@ -15,7 +15,6 @@ export const Reviews = ({ id }: { id: string }) => {
   }, [dispatch, id]);
 
   const { ganja } = useAppSelector((state: RootState) => state.getGanja);
-  // console.log(ganja);
 
   const reviewsNum = ganja?.reviews?.length;
 

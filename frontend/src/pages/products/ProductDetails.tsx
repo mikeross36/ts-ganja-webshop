@@ -28,7 +28,7 @@ const ProductDetails = () => {
     (state: RootState) => state.getAllGanjas
   );
   const ganja = ganjas?.find((ganja: GanjaType) => ganja._id === ganjaId);
-  // console.log(ganja);
+
   const {
     _id,
     name,

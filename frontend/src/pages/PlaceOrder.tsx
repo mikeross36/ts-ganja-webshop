@@ -7,10 +7,6 @@ import { CartItemType } from "../types/CartTypes";
 import { formatCurrency } from "../hooks/useFormater";
 import { useAppContext } from "../contexts/AppContextProvider";
 import Button from "../components/Button";
-// import { createOrderAction } from "../state/action-creators/orderActions";
-// import { useAppDispatch } from "../hooks/useAppDispatch";
-// import { OrderActionType } from "../state/actions/order";
-// import { OrderType } from "../types/OrderType";
 import { toast } from "react-toastify";
 import { useEffect } from "react";
 import { useCreateOrderMutation } from "../hooks/useOrderQueries";
@@ -37,12 +33,8 @@ const PlaceOrder = () => {
   const dispatch = useShoppingCartDispatch();
   const navigate = useNavigate();
 
-  // const order = useAppSelector(
-  //   (state: RootState) => state.createOrder as unknown as OrderActionType
-  // );
   const { mutateAsync: createOrderAction, isPending } =
     useCreateOrderMutation();
-  // console.log(order);
 
   const handlePlaceOrder = async () => {
     try {

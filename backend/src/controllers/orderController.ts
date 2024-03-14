@@ -4,7 +4,6 @@ import { OrderModel } from "../models";
 import { Order } from "../models/orderModel";
 import Stripe from "stripe";
 import config from "config";
-// import { Ganja } from "../models/ganjaModel";
 
 export const createOrderHandler: RequestHandler = asyncHandler(
   async (req, res) => {

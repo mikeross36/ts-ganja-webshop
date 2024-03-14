@@ -2,7 +2,7 @@ import { RequestHandler, NextFunction } from "express";
 import asyncHandler from "express-async-handler";
 import config from "config";
 import Email from "../utils/email";
-// import {ObjectId} from "bson"
+
 import {
   createUser,
   findUserByEmail,
